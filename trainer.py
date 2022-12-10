@@ -501,6 +501,14 @@ class UBTeacherTrainer(DefaultTrainer):
                     loss_dict[key] = record_dict[key] * 1
             losses = sum(loss_dict.values())
 
+            metrics_dict = record_dict
+            metrics_dict["data_time"] = data_time
+            self._write_metrics(metrics_dict)
+
+            self.optimizer.zero_grad()
+            losses.backward()
+            self.optimizer.step()
+
         else:
             if self.iter == self.cfg.SEMISUPNET.BURN_UP_STEP:
                 # update copy the the whole model
