@@ -28,7 +28,8 @@ paper: https://arxiv.org/abs/2102.09480
 - 둘째, 학생 모델의 낮은 비중의 고정된 가중치만 가중평균에 사용하기 때문에 선생 모델은 Pseudo-label과 Pseudo-bounding box를 만드는 수준이 학생 모델의 학습 속도를 따라가지 못할 가능성이 있다.
 - 따라서 본 프로젝트 진행자는 이러한 문제를 해결하기 위해, Student Model이 올바르게 학습한 경우에 알파를 작게 주고 학습을 잘못한 경우에는 알파를 크게 주어 Student Model의 학습 수준에 맞게 동적으로 설정하는 알파를 제안했다. 올바르게 학습을 한 경우와 올바르게 학습을 하지 않은 경우는 정답이 있는 데이터에 대해 손실을 계산한 Supervised Loss를 기준으로 설정했다. 해당 알파를 동적으로 설정하는 과정의 핵심은 아래와 같다.
 
-![image](https://user-images.githubusercontent.com/70766134/206852165-cde01f25-1174-49f0-b018-584722d91567.png)
+![image](https://user-images.githubusercontent.com/70766134/206852196-c7577b21-a4ea-406f-a216-7a84afa2de7f.png)
+
 
 
 
